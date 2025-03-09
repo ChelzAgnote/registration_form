@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="sscr logo.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 2s ease-in-out;
+        }
+        .flashcard {
+            display: none;
+        }
+        .flashcard.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .requirements-container {
+            max-height: 200px;
+            overflow-y: auto;
+            position: relative;
+            background: #FEF9C3;
+            /* padding: 10px; */
+            border-radius: 5px;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: #FEF9C3;
+            padding: 5px;
+            font-weight: bold;
+            z-index: 10;
+            border-bottom: 2px solid #FEF9C3;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body class="bg-blue-100 flex items-center justify-center min-h-screen">
+    <div class="bg-red-500/20 p-8 rounded-lg shadow-lg w-full max-w-4xl relative backdrop-blur-lg transition duration-300 hover:bg-red-500/30 hover:shadow-2xl text-black font-bold font-bebas">
+        <div class="flex justify-between items-center mb-4">
+            <i class="fas fa-chevron-left text-black cursor-pointer" onclick="prevSlide()"></i>
+            <i class="fas fa-chevron-right text-black cursor-pointer" onclick="nextSlide()"></i>
+        </div>
+        
+        <div id="form-sections">
+            <!-- Card 1 -->
+            <div class="flashcard active" id="card-1">
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-white">First Name:</label>
+                        <input type="text" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                    <div>
+                        <label class="block text-white">MI (Optional):</label>
+                        <input type="text" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                    <div>
+                        <label class="block text-white">Last Name:</label>
+                        <input type="text" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label class="block text-white">Date of Birth:</label>
+                        <input type="date" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                    <div>
+                        <label class="block text-white">Gender:</label>
+                        <div class="flex gap-4">
+                            <label class="text-white"><input type="checkbox"> Male</label>
+                            <label class="text-white"><input type="checkbox"> Female</label>
+                            <label class="text-white"><input type="checkbox"> Others</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label class="block text-white">Place of Birth:</label>
+                        <input type="text" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                    <div>
+                        <label class="block text-white">Address:</label>
+                        <input type="text" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label class="block text-white">Phone Number:</label>
+                        <input type="text" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                    <div>
+                        <label class="block text-white">Email:</label>
+                        <input type="email" class="w-full p-2 border border-black rounded bg-yellow-100">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="flashcard" id="card-2">
+                <label class="block text-white">Course:</label>
+                <select class="w-full p-2 border border-black rounded bg-yellow-100">
+                    <option>BSIT</option>
+                    <option>BSCS</option>
+                    <option>BSECE</option>
+                </select>
+                
+                <!-- <div class="bg-yellow-200 p-4 mt-4 rounded">
+                    <h3 class="font-bold">LIST OF REQUIREMENTS:</h3>
+                    <p class="text-sm">For New Students:</p>
+                    <ul class="list-disc pl-4 text-sm">
+                        <li>Clearance</li>
+                        <li>NSO/PSA Birth Certificate</li>
+                        <li>Certificate of Good Moral (Original)</li>
+                        <li>Form 138/Report Card</li>
+                        <li>Form 137/Transcript of Record Copy Valid for SSC-R</li>
+                    </ul>
+                </div>
+                 -->
+
+                 <div class="requirements-container mt-4">
+                    <div class="sticky-header">LIST OF REQUIREMENTS:</div>
+                    <p class="font-bold">For Continuing Students:</p>
+                    <ul class="list-disc pl-4 text-sm">
+                        <li>Clearance</li>
+                    </ul>
+                    <p class="font-bold">For New Students:</p>
+                    <ul class="list-disc pl-4 text-sm">
+                        <li>Identical Colored Pictures 2x2(6pcs) and 1x1(4pcs) white background</li>
+                        <li>NSO/PSA Birth Certificate</li>
+                        <li>Certificate of Good Moral (Original)</li>
+                        <li>Marriage Certificate for Married Female Student</li>
+                        <li>Form 138/Report Card</li>
+                        <li>Form 137/Transcript of Record Copy Valid for SSC-R</li>
+                    </ul>
+                    <p class="font-bold">For Transferee Students:</p>
+                    <ul class="list-disc pl-4 text-sm">
+                        <li>Identical Colored Pictures 2x2(6pcs) and 1x1(4pcs) white background</li>
+                        <li>NSO/PSA Birth Certificate</li>
+                        <li>Certificate of Good Moral (Original)</li>
+                        <li>Form 138/Report Card</li>
+                        <li>Form 137/Transcript of Record Copy Valid for SSC-R</li>
+                        <li>Honorable Dismissal</li>
+                        <li>Course Description</li>
+                    </ul>
+                </div>
+
+
+
+
+
+                <div class="mt-4">
+                    <label class="block text-white">Attach Your Files Here:</label>
+                    <input type="file" class="border border-black p-2 w-full bg-yellow-100 rounded">
+                </div>
+                
+                <button id="registerButton" class="bg-yellow-500 text-white px-6 py-2 mt-4 rounded w-full">REGISTER NOW!</button>
+                <p id="confirmationMessage" class="text-black text-center mt-2 hidden font-semibold"></p>
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentCard = 0;
+        const cards = document.querySelectorAll('.flashcard');
+
+        function showCard(index) {
+            cards.forEach((card, i) => {
+                card.classList.remove('active');
+                if (i === index) {
+                    card.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentCard = (currentCard + 1) % cards.length;
+            showCard(currentCard);
+        }
+
+        function prevSlide() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            showCard(currentCard);
+        }
+
+        const images = [
+            'misa.png',
+            'sscr1.png',
+            'paskuhan.png',
+            'sscr4.png',
+            'cross.png',
+            'convocation.png',
+            'sscr2.png',
+            'sscr3.png',
+        ];
+        let currentImageIndex = 0;
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+        setInterval(changeBackground, 5000);
+        changeBackground();
+
+        document.getElementById("registerButton").addEventListener("click", function() {
+    // Show alert
+    alert("Your registration has been submitted successfully!");
+
+    // Display confirmation message below the button
+    let message = document.getElementById("confirmationMessage");
+    message.innerText = " Your registration has been submitted successfully!";
+    message.classList.remove("hidden");
+    message.classList.add("text-white"); // Make the text green for visibility
+});
+
+
+    </script>
+</body>
+</html>
